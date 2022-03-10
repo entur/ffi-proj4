@@ -39,7 +39,7 @@ module Proj4
         end
       }.join(' ')
 
-      ptr = FFIProj4.pj_init_plus(params)
+      ptr = FFIProj4.proj_create(params)
 
       if ptr.null?
         result = FFIProj4.pj_get_errno_ref.read_int

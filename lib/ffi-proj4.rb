@@ -49,7 +49,11 @@ module Proj4
     ffi_lib(*proj4_library_path)
 
     FFI_LAYOUT = {
-      :pj_init_plus => [
+      :proj_info => [
+        :string
+      ],
+
+      :proj_create => [
         :pointer, :string
       ],
 
@@ -130,7 +134,7 @@ module Proj4
     attr_reader :proj_lib
 
     def version
-      "42"
+      FFIProj4.proj_info()
     end
 
     def proj_lib=(lib)
