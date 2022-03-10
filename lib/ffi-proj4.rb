@@ -78,7 +78,7 @@ module Proj4
       ],
 
       :pj_set_finder => [
-        :void, callback([ :string ], :string)
+        :void, callback([ :string ], :pointer)
       ],
 
       :pj_set_searchpath => [
